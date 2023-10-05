@@ -1,7 +1,7 @@
 #!/bin/bash -l
 
 #SBATCH --cpus-per-task=[_DEPLOY_HEAD_CPUS_]
-#SBATCH --gpus-per-task=[_DEPLOY_HEAD_GPUS_]
+#SBATCH --gres=gpu:[_DEPLOY_HEAD_GPUS_]
 
 #SBATCH --nodes=1
 #SBATCH --exclusive
@@ -11,6 +11,7 @@
 [_PY_ADD_SLURM_CMD_]
 
 set -x
+SLURM_GPUS_PER_TASK=[_DEPLOY_HEAD_GPUS_]
 
 # __doc_head_address_start__
 

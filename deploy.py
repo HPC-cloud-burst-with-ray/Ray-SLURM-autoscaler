@@ -9,17 +9,31 @@ import os
 ''' TODO: Fill the fields below '''
 
 # The absolute path of Ray library
-RAY_PATH = "/Users/<user_name>/opt/anaconda3/envs/<env_name>/lib/python3.9/site-packages/ray"
+RAY_PATH = "/home/zhongbozhu/.conda/envs/cloud_burst_ray/lib/python3.9/site-packages/ray"
 
 # The compute node name to IP mapping
-SLURM_IP_LOOKUP = """ {
-    "compute1" : "192.168.1.1",
-    "compute2" : "192.168.1.2",
-} """
+SLURM_IP_LOOKUP = """{
+    "hal01" : "192.168.20.1",
+    "hal02" : "192.168.20.2",
+    "hal03" : "192.168.20.3",
+    "hal04" : "192.168.20.4",
+    "hal05" : "192.168.20.5",
+    "hal06" : "192.168.20.6",
+    "hal07" : "192.168.20.7",
+    "hal08" : "192.168.20.8",
+    "hal09" : "192.168.20.9",
+    "hal10" : "192.168.20.10",
+    "hal11" : "192.168.20.11",
+    "hal12" : "192.168.20.12",
+    "hal13" : "192.168.20.13",
+    "hal14" : "192.168.20.14",
+    "hal15" : "192.168.20.15",
+    "hal16" : "192.168.20.16",
+}"""
 
 MAX_SLURM_JOB_TIME = "01:30:00"
 
-HEAD_NODE_CPUS = "1"
+HEAD_NODE_CPUS = "0"
 HEAD_NODE_GPUS = "0"
 WORKER_NODE_CPUS = "1"
 WORKER_NODE_GPUS = "0"
