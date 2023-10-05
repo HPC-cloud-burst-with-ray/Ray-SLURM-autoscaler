@@ -37,13 +37,18 @@ def main():
         # Return IP address.
         return socket.gethostbyname(socket.gethostname())
 
-    object_ids = [f.remote() for _ in range(2000)]
+    object_ids = [f.remote() for _ in range(200)]
     ip_addresses = ray.get(object_ids)
 
     print('Tasks executed')
     for ip_address, num_tasks in Counter(ip_addresses).items():
         print('    {} tasks on {}'.format(num_tasks, ip_address))
 
+    cnt = 0
+    while cnt < 10000:
+        time.sleep(1)
+        cnt += 1
+        print("Waiting for 100 seconds...")
     
 if __name__ == "__main__":
     # get redis password from arg list 1st
