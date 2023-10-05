@@ -47,6 +47,7 @@ def main():
     
 if __name__ == "__main__":
     # get redis password from arg list 1st
-    if len(sys.argv) == 1:
+    print(sys.argv)
+    if len(sys.argv) == 2:
         redis_password_config = sys.argv[1]
     main()
