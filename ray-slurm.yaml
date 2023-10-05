@@ -3,7 +3,7 @@ cluster_name: slurm-cluster
 
 # The maximum number of workers nodes to launch in addition to the head
 # node.
-min_workers: 0
+min_workers: 1
 max_workers: 2
 
 # The autoscaler will scale up the cluster faster with higher upscaling speed.
@@ -31,7 +31,7 @@ head_node_type: head_node
 available_node_types:
   head_node:
     max_workers: 0 # do not modify
-    resources: {"CPU": 0, "GPU": 0} # will be used by autoscaler scheduler
+    resources: {"CPU": 1, "GPU": 0} # will be used by autoscaler scheduler
     node_config:
       head_node: 1 # needed by my create node. Do not modify 
       under_slurm: 0 # whether the head node should be started under slurm
@@ -49,7 +49,7 @@ available_node_types:
   
   worker_node:
     # Minimum number of Ray workers of this type.
-    min_workers: 0
+    min_workers: 1
     # Maximum number of Ray workers of this type. Takes precedence over min_workers.
     max_workers: 2
 
